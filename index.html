@@ -98,48 +98,74 @@
 						<!-- award 수상경력 기록-->
 							<article id="award">
 								<h2 class="major">Award</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<!--<span class="image main"><img src="images/pic01.jpg" alt="" /></span>일단가림-->
 								<p>수상경력 <a href="#work">awesome work</a>.</p>
-								<p>있길바람</p>
-							</article>
+									<!--추가한것-->
+									<section class="timeline">
+										<div class="years">
+											<button data-year="2017">2017</button>
+											<button data-year="2018">2018</button>
+											<button data-year="2019">2019</button>
+											<button data-year="2020">2020</button>
+											<button data-year="2021">2021</button>
+										</div>
 
-						<!-- Work 나의 작품소개 및 경력나열필요-->
-							<article id="work">
-								<h2 class="major">Work</h2>
-								<!--<span class="image main"><img src="images/pic02.jpg" alt="" /></span>일단가림-->
-								<p>내가만든 작품 사진 및 소개 필요</p>
-								<!--여기서부터 다른 템플릿 퍼온것-->
-								<section class="gallery">
-								<div class="card">
-									<div class="image">
-									<img src="images/pic01.jpg" alt="Magna"> <!-- //수정가능// -->
-									</div>
-									<div class="content">
-									<h2>MAGNA</h2>
-									<p>간단한 설명글을 여기에 적을 수 있습니다.</p>
-									</div>
-								</div>
+										<!-- 항상 고정되어 보이는 창 -->
+										<div class="details" id="details">
+											<img id="yearImage" src="images/pic01.jpg" alt="Year Image"> <!-- 초기 이미지 -->
+											<div class="text">
+											<h2 id="yearTitle">Caption 1</h2>
+											<p id="yearDesc">2017년의 주요 활동 설명입니다.</p>
+											</div>
+										</div>
+										</section>
 
-								<div class="card">
-									<div class="image">
-									<img src="images/pic02.jpg" alt="Lorem"> <!-- //수정가능// -->
-									</div>
-									<div class="content">
-									<h2>LOREM</h2>
-									<p>설명글이 들어갑니다.</p>
-									</div>
-								</div>
+										<script>
+										// 연도별 데이터 세팅
+										const yearData = {
+											"2017": {
+											img: "images/pic01.jpg",
+											title: "Caption 1",
+											desc: "2017년의 주요 활동 설명입니다."
+											},
+											"2018": {
+											img: "images/pic02.jpg",
+											title: "Caption 2",
+											desc: "2018년의 주요 활동 설명입니다."
+											},
+											"2019": {
+											img: "images/pic03.jpg",
+											title: "Caption 3",
+											desc: "2019년의 주요 활동 설명입니다."
+											},
+											"2020": {
+											img: "images/pic04.jpg",
+											title: "Caption 4",
+											desc: "2020년의 주요 활동 설명입니다."
+											},
+											"2021": {
+											img: "images/pic05.jpg",
+											title: "Caption 5",
+											desc: "2021년의 주요 활동 설명입니다."
+											}
+										};
 
-								<div class="card">
-									<div class="image">
-									<img src="images/pic03.jpg" alt="Feugiat"> <!-- //수정가능// -->
-									</div>
-									<div class="content">
-									<h2>FEUGIAT</h2>
-									<p>여기에 내용을 작성할 수 있습니다.</p>
-									</div>
-								</div>
-								</section>
+										const buttons = document.querySelectorAll(".years button");
+										const yearImage = document.getElementById("yearImage");
+										const yearTitle = document.getElementById("yearTitle");
+										const yearDesc = document.getElementById("yearDesc");
+
+										buttons.forEach(btn => {
+											btn.addEventListener("mouseenter", () => {
+											const year = btn.dataset.year;
+											const data = yearData[year];
+											yearImage.src = data.img;
+											yearTitle.textContent = data.title;
+											yearDesc.textContent = data.desc;
+											});
+										});
+										</script>
+
 									<!--여기까지 퍼온것-->
 								<p>수상경력 꼭 추가필요</p>
 							</article> 
@@ -149,6 +175,44 @@
 								<h2 class="major">About</h2>
 								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
 								<p>내가누구인지 소개글 작성 필요.</p>
+							</article>
+						<!-- About 나의 프로페셔널한 사진 및 자기소개 필요--> 
+							<article id="wrok">
+								<h2 class="major">Work</h2>
+								<!--<span class="image main"><img src="images/pic03.jpg" alt="" /></span>잠시가림-->
+								<p>우리 작품 갤러리</p>
+								<section class="gallery">
+									<div class="card">
+										<div class="image">
+										<img src="images/pic01.jpg" alt="Magna"> <!-- //수정가능// -->
+										</div>
+										<div class="content">
+										<h2>MAGNA</h2>
+										<p>간단한 설명글을 여기에 적을 수 있습니다.</p>
+										</div>
+									</div>
+
+									<div class="card">
+										<div class="image">
+										<img src="images/pic02.jpg" alt="Lorem"> <!-- //수정가능// -->
+										</div>
+										<div class="content">
+										<h2>LOREM</h2>
+										<p>설명글이 들어갑니다.</p>
+										</div>
+									</div>
+
+									<div class="card">
+										<div class="image">
+										<img src="images/pic03.jpg" alt="Feugiat"> <!-- //수정가능// -->
+										</div>
+										<div class="content">
+										<h2>FEUGIAT</h2>
+										<p>여기에 내용을 작성할 수 있습니다.</p>
+										</div>
+									</div>
+								</section>
+
 							</article>
 
 						<!-- Contact 버튼누르면 내게 메일 발송 될것  하단 SNS 연동 할것-->
