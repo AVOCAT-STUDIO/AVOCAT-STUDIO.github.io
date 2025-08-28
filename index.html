@@ -46,9 +46,53 @@
 						<!-- pricing 월드 단가 소개필요-->
 							<article id="pricing">
 								<h2 class="major">pricing</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
+								<!--<span class="image main"><img src="images/pic01.jpg" alt="" /></span>이미지 일단 지움-->
 								<p>월드규모 기간 가격 나열필요 <a href="#work">awesome work</a>.</p>
-								<p>크몽참조하여 가격 측정할것</p>
+						<!--가격상세정보표 추가한것-->
+								<!-- 탭 버튼 -->
+								<div class="tabs">
+									<div class="tab active" onclick="showContent('standard')">STANDARD</div>
+									<div class="tab" onclick="showContent('deluxe')">DELUXE</div>
+									<div class="tab" onclick="showContent('premium')">PREMIUM</div>
+								</div>
+
+								<!-- STANDARD -->
+								<div id="standard" class="content active">
+									<img src="images/pic01.jpg" alt="Standard"> <!-- //수정가능// -->
+									<div class="price">₩1,000,000</div> <!-- //수정가능// -->
+									<p>소규모 맵 제작, 기본 스크립트, 간단한 행사.</p> <!-- //수정가능// -->
+									<a href="#contact" class="btn">전문가에게 문의하기</a>
+								</div>
+
+								<!-- DELUXE -->
+								<div id="deluxe" class="content">
+									<img src="images/pic02.jpg" alt="Deluxe"> <!-- //수정가능// -->
+									<div class="price">₩2,500,000</div> <!-- //수정가능// -->
+									<p>중소규모 맵 제작, 간단한 미니게임, 고해상도 파일 제공.</p> <!-- //수정가능// -->
+									<a href="#contact" class="btn">전문가에게 문의하기</a>
+								</div>
+
+								<!-- PREMIUM -->
+								<div id="premium" class="content">
+									<img src="images/pic03.jpg" alt="Premium"> <!-- //수정가능// -->
+									<div class="price">₩5,000,000</div> <!-- //수정가능// -->
+									<p>대규모 맞춤형 맵, 인터랙션 기능, 풀 커스터마이징.</p> <!-- //수정가능// -->
+									<a href="#contact" class="btn">전문가에게 문의하기</a>
+								</div>
+
+								<script>
+									function showContent(id) {
+									// 모든 콘텐츠 숨기기
+									document.querySelectorAll('.content').forEach(c => c.classList.remove('active'));
+									// 모든 탭 비활성화
+									document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+									// 클릭된 콘텐츠와 탭 활성화
+									document.getElementById(id).classList.add('active');
+									event.target.classList.add('active');
+									}
+								</script>
+						<!--여기까지-->
+								<p>간단한 주의 사항 적어둘것</p>
 							</article>
 						
 						<!-- award 수상경력 기록-->
@@ -62,86 +106,40 @@
 						<!-- Work 나의 작품소개 및 경력나열필요-->
 							<article id="work">
 								<h2 class="major">Work</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<!--<span class="image main"><img src="images/pic02.jpg" alt="" /></span>일단가림-->
 								<p>내가만든 작품 사진 및 소개 필요</p>
 								<!--여기서부터 다른 템플릿 퍼온것-->
-								<div id="main2">
-										<div class="inner2">
-											<header>
-												<h1>호라이즌 월드<br />
-												template designed by <a href="http://html5up.net">HTML5 UP</a>.</h1>
-												<p>자잘한 설명들</p>
-											</header>
-											<section class="tiles">
-												<article class="style1">
-													<span class="image">
-														<img src="images/pic10.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>이건뭐지?</h2>
-														<div class="content">
-															<p>나도모르겠음</p>
-														</div>
-													</a>
-												</article>
-												<article class="style2">
-													<span class="image">
-														<img src="images/pic11.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>이것도 모르겠음</h2>
-														<div class="content">
-															<p>무슨내용?</p>
-														</div>
-													</a>
-												</article>
-												<article class="style3">
-													<span class="image">
-														<img src="images/pic12.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>사진이름인듯</h2>
-														<div class="content">
-															<p>사진설명일까?</p>
-														</div>
-													</a>
-												</article>
-												<article class="style4">
-													<span class="image">
-														<img src="images/pic13.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>사진맞는듯</h2>
-														<div class="content">
-															<p>이글은 어디뜨는거지?</p>
-														</div>
-													</a>
-												</article>
-												<article class="style5">
-													<span class="image">
-														<img src="images/pic14.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>Aliquam</h2>
-														<div class="content">
-															<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-														</div>
-													</a>
-												</article>
-												<article class="style6">
-													<span class="image">
-														<img src="images/pic15.jpg" alt="" />
-													</span>
-													<a href="https://www.naver.com" target="_blank">
-														<h2>Veroeros</h2>
-														<div class="content">
-															<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-														</div>
-													</a>
-												</article>
-											</section>
-										</div>
-									</div>	
+								<section class="gallery">
+								<div class="card">
+									<div class="image">
+									<img src="images/pic01.jpg" alt="Magna"> <!-- //수정가능// -->
+									</div>
+									<div class="content">
+									<h2>MAGNA</h2>
+									<p>간단한 설명글을 여기에 적을 수 있습니다.</p>
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="image">
+									<img src="images/pic02.jpg" alt="Lorem"> <!-- //수정가능// -->
+									</div>
+									<div class="content">
+									<h2>LOREM</h2>
+									<p>설명글이 들어갑니다.</p>
+									</div>
+								</div>
+
+								<div class="card">
+									<div class="image">
+									<img src="images/pic03.jpg" alt="Feugiat"> <!-- //수정가능// -->
+									</div>
+									<div class="content">
+									<h2>FEUGIAT</h2>
+									<p>여기에 내용을 작성할 수 있습니다.</p>
+									</div>
+								</div>
+								</section>
 									<!--여기까지 퍼온것-->
 								<p>수상경력 꼭 추가필요</p>
 							</article> 
@@ -446,4 +444,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 			<script src="assets1/js/main.js"></script>
 
 	</body>
+
+	
 </html>
